@@ -8,7 +8,7 @@ const ExpenseItems = () => {
 
       <p>Petrol Rs 100</p>
 
-      <p>Movies Rs 300</p>
+      <p>Movies Rs 200</p>
     </div>
   );
 };
