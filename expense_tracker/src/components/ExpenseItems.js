@@ -1,20 +1,14 @@
 import React from "react";
 import "./ExpenseItems.css";
-
-const date = "22-Feb-2024";
-const expenseDetails = "Car Insurance";
-const LocationOfExpenditure = "Bengaluru";
-const expensePrice = 224.5;
-const ExpenseItems = () => {
+const ExpenseItems = (props) => {
   return (
     <div>
-      <h2>Expenses</h2>
       <div className="expense-item">
-        <div>{date}</div>
+        <div>{props.date.toISOString()}</div>
         <div className="expense-item__description">
-          <h2>{expenseDetails}</h2>
-          <h2>{LocationOfExpenditure}</h2>
-          <div className="expense-item__price">${expensePrice}</div>
+          <h2>{props.title}</h2>
+          <h2>{props.location}</h2>
+          <div className="expense-item__price">${props.amount}</div>
         </div>
       </div>
     </div>
