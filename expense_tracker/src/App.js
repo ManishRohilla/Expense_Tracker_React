@@ -1,12 +1,12 @@
 import Expenses from "./components/Expenses/Expenses";
 import "./App.css";
-import ExpenseForm from "./components/NewExpenses/ExpenseForm";
+import NewExpense from "./components/NewExpenses/NewExpense";
 
 function App() {
   return (
     <div>
       <h2>Expense Tracker</h2>
-      <ExpenseForm />
+      <NewExpense />
       <Expenses />
     </div>
   );
