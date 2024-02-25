@@ -31,7 +31,7 @@ function App() {
     newExpense = {
       ...newExpense,
       id: expenses.length + 1,
-      date: new Date(2024, 2, 29),
+      date: new Date(newExpense.date),
     };
     console.log("App", newExpense);
     setExpense((prevExpenses) => {
