@@ -16,6 +16,7 @@ const Expenses = (props) => {
     const expense = expenses[i];
     expenseItems.push(
       <ExpenseItems
+        key={expense.id}
         className={props.className}
         id={expense.id}
         title={expense.title}
