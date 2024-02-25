@@ -5,13 +5,22 @@ import React, { useState } from "react";
 import ExpensesFilter from "./ExpensesFilter";
 
 const Expenses = (props) => {
-  const [filteredYear, setFilteredYear] = useState("2020");
-
-  const filterChangeHandler = (selectedYear) => {
-    setFilteredYear(selectedYear);
-  };
-  let expenses = props.expenses;
   const expenseItems = [];
+  const [filteredYear, setFilteredYear] = useState("All");
+
+  const handleYearFilter = (yearFilter) => {
+    setFilteredYear(yearFilter);
+    console.log("up", yearFilter);
+  };
+
+  let expenses = props.expenses;
+
+  // Filter expenses based on the selected year
+  if (filteredYear !== "All") {
+    expenses = expenses.filter(
+      (expense) => expense.date.getFullYear().toString() === filteredYear
+    );
+  }
   for (let i = 0; i < expenses.length; i++) {
     const expense = expenses[i];
     expenseItems.push(
@@ -29,10 +38,7 @@ const Expenses = (props) => {
   return (
     <div>
       <Card className="expenses">
-        <ExpensesFilter
-          selected={filteredYear}
-          onChangeFilter={filterChangeHandler}
-        />
+        <ExpensesFilter selectedYear={handleYearFilter} />
         {expenseItems}
       </Card>
     </div>

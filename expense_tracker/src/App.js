@@ -39,7 +39,7 @@ function App() {
     });
   };
   return (
-    <div>
+    <div className="App">
       <h2>Expense Tracker</h2>
       <NewExpense onReceiveExpense={sendForLog} />
       <Expenses expenses={expenses} />
